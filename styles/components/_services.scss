@@ -1,0 +1,55 @@
+.services {
+    @include responsive-display(768px);
+    flex-wrap: wrap;
+    margin: 0 0 2em -3em;
+    @include responsive-width(calc(100% + 3em));
+
+    .service {
+        display: flex;
+        align-items: center;
+        margin: 0 0 3em 3em;
+        position: relative;
+        @include responsive-width(calc(50% - 3em));
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    .service:nth-last-child(2),
+    .service:nth-last-child(1) {
+        @include responsive-margin(0 0 0 3em, 0 0 3em 3em);
+    }
+
+    .icon {
+        position: relative;
+        flex-grow: 0;
+        flex-shrink: 0;
+        display: block;
+        height: 10em;
+        line-height: 10em;
+        margin: 0 2em 0 0;
+        text-align: center;
+        width: 10em;
+    }
+
+    .icon:after {
+        transform: rotate(45deg);
+        border-radius: 0.25rem;
+        border: solid 2px rgba(210, 215, 217, 0.75);
+        content: '';
+        display: block;
+        height: 7em;
+        left: 50%;
+        margin: -3.5em 0 0 -3.5em;
+        position: absolute;
+        top: 50%;
+        width: 7em;
+    }
+
+    .icon:before {
+        color: $ligth-red;
+        font-size: 2.75rem;
+        position: relative;
+        top: 0.05em;
+    }
+}
