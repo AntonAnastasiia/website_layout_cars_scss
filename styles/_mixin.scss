@@ -1,0 +1,108 @@
+@mixin heading-style($font-size, $mobile-font-size, $border-bottom: 0, $margin: 0, $padding: 0) {
+    color: $black-grey;
+    line-height: $line-height-heading;
+    font-weight: 700;
+    border-bottom: $border-bottom;
+    font-size: $font-size;
+    display: inline-block;
+    margin: $margin;
+    padding: $padding;
+    @media (max-width: 768px) {
+        font-size: $mobile-font-size;
+    }
+}
+
+@mixin button-style() {
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: transparent;
+    border-radius: 0.375em;
+    border: 0;
+    box-shadow: inset 0 0 0 2px $ligth-red;
+    color: $ligth-red;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 700;
+    height: 3.5em;
+    letter-spacing: 0.075em;
+    line-height: 3.5em;
+    padding: 0 2.25em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    &:hover {
+        background-color: $ligth-red;
+        color: #ffffff;
+    }
+}
+
+@mixin list-style($margin: 0, $padding: 0, $display, $border-top: 0) {
+    cursor: pointer;
+    list-style: none;
+    padding-left: 0;
+
+    li {
+        display: $display;
+        color: $black-grey;
+        border-top: $border-top;
+        margin: $margin;
+        padding: $padding;
+    }
+}
+
+@mixin responsive-display($breakpoint: 768px) {
+    display: flex;
+
+    @media (max-width: $breakpoint) {
+        display: block;
+        width: 100%;
+    }
+}
+
+@mixin responsive-width($desktop-width, $breakpoint: 768px) {
+    width: $desktop-width;
+
+    @media (max-width: $breakpoint) {
+        width: 100%;
+    }
+}
+
+@mixin responsive-margin($desktop-margin, $mobile-margin, $breakpoint: 768px) {
+    margin: $desktop-margin;
+
+    @media (max-width: $breakpoint) {
+        margin: $mobile-margin;
+    }
+}
+
+@mixin responsive-padding($desktop-padding, $mobile-padding, $breakpoint: 768px) {
+    padding: $desktop-padding;
+
+    @media (max-width: $breakpoint) {
+        padding: $mobile-padding;
+    }
+}
+
+@mixin responsive-display-block($breakpoint: 768px, $block: block) {
+    display: none;
+
+    @media (max-width: $breakpoint) {
+        display: $block;
+    }
+}
+
+@mixin post-width {
+    @media (min-width: 1800px) {
+        width: calc(33.33333% - 6em);
+    }
+
+    @media (max-width: 1799px) {
+        width: calc(50% - 6em);
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+}
