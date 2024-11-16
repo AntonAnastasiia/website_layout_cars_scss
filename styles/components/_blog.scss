@@ -1,0 +1,33 @@
+.posts {
+    @include responsive-display(768px);
+    flex-wrap: wrap;
+    margin: 0 0 2em -6em;
+    width: calc(100% + 6em);
+
+    .post {
+        @include post-width;
+        flex-grow: 0;
+        flex-shrink: 1;
+        @include responsive-margin(0 0 6em 6em, 0 0 3em 6em);
+        position: relative;
+
+        .image {
+            height: 240px;
+            display: block;
+            overflow: hidden;
+            border-radius: 5px;
+            margin: 0 0 2em 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        }
+    }
+    .post:nth-last-child(2),
+    .post:nth-last-child(1) {
+        @include responsive-margin(0 0 0 6em, 0 0 3em 6em);
+    }
+}
